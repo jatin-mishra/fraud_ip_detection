@@ -1,0 +1,11 @@
+Use kafka and Spark Streaming to detect a fraud Ip, and the number of times the IP tried to hit the server.
+producer :
+	read log file and publish records to  the kafka topic. in a real case , we may use Flume or producer application, which directly takes a log record on real time basis and publish to kafka topic.
+
+fraud IPs list:
+	maintain a list of predefined fraud range which can be used to identify fraud IPs. For this application use memory IP list which can be replaced by fast key based lookup, such as HBase.
+
+spark streaming :
+	read records from kafka topic and detect Ips and domains which are ssuspecious.
+
+
